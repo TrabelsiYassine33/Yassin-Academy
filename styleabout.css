@@ -1,0 +1,257 @@
+
+/* ===== ABOUT PAGE ===== */
+
+.about-hero {
+    min-height: 430px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 80px 8%;
+    background: linear-gradient(135deg, #eef2ff, #f8fafc);
+}
+
+.about-hero-content {
+    max-width: 800px;
+}
+
+.about-label {
+    display: inline-block;
+    color: #1261c9;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 18px;
+}
+
+.about-hero h1 {
+    font-size: 44px;
+    line-height: 1.25;
+    color:  #09264d;
+    margin-bottom: 20px;
+}
+
+.about-hero h1 span {
+    color: #09264d;
+}
+
+.about-hero p {
+    max-width: 650px;
+    margin: 0 auto 30px;
+    color: #09264d;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+.about-btn {
+    display: inline-block;
+    padding: 14px 25px;
+    background-color: #1261c9;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.about-btn:hover {
+    background-color: #1261c9;
+    transform: translateY(-2px);
+}
+
+/* ===== WHO WE ARE ===== */
+
+.who-we-are {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 8%;
+}
+
+.about-image {
+    flex: 1;
+    min-width: 0;
+}
+
+.about-image img {
+    width: 100%;
+    display: block;
+    border-radius: 16px;
+    object-fit: cover;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-text h2 {
+    font-size: 32px;
+    line-height: 1.3;
+    color: #09264d;
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    color: #09264d;
+    font-size: 15px;
+    line-height: 1.9;
+    margin-bottom: 15px;
+}
+
+/* ===== MISSION / VISION / VALUES ===== */
+
+.mission-section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    padding: 70px 8%;
+    background-color: #f8fafc;
+}
+
+.mission-card {
+    background-color: white;
+    text-align: center;
+    padding: 35px 25px;
+    border-radius: 14px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.mission-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.09);
+}
+
+.mission-icon {
+    font-size: 38px;
+    margin-bottom: 15px;
+}
+
+.mission-card h3 {
+    color: #1e293b;
+    font-size: 21px;
+    margin-bottom: 12px;
+}
+
+.mission-card p {
+    color: #09264d;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+/* ===== CALL TO ACTION ===== */
+
+.about-cta {
+    text-align: center;
+    padding: 75px 20px;
+    background-color: #eef2ff;
+}
+
+.about-cta h2 {
+    font-size: 32px;
+    color: #1e293b;
+    margin-bottom: 15px;
+}
+
+.about-cta p {
+    color: #1261c9;
+    font-size: 16px;
+    margin-bottom: 25px;
+    line-height: 1.8;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+
+@media (max-width: 768px) {
+
+    .about-hero {
+        padding: 60px 6%;
+    }
+
+    .about-hero h1 {
+        font-size: 34px;
+    }
+
+    .who-we-are {
+        flex-direction: column;
+        gap: 30px;
+        padding: 50px 6%;
+    }
+
+    .about-text h2 {
+        font-size: 27px;
+    }
+
+    .mission-section {
+        grid-template-columns: 1fr;
+        padding: 50px 6%;
+    }
+
+    .about-cta h2 {
+        font-size: 27px;
+    }
+}
+
+@media (max-width: 400px) {
+
+    .about-hero h1 {
+        font-size: 29px;
+    }
+
+    .about-hero p {
+        font-size: 14px;
+    }
+
+    .about-btn {
+        padding: 12px 18px;
+        font-size: 14px;
+    }
+}
+
+/* ===== FIX NAVBAR ===== */
+
+header {
+    width: 100%;
+    padding: 20px 8%;
+    background: #fff;
+}
+
+header nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+header nav .logo {
+    font-size: 26px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #1261c9;
+}
+
+header nav ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 25px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+}
+
+header nav ul li a:hover,
+header nav ul li a.active {
+    color: #1261c9;
+}
