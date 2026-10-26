@@ -11,35 +11,49 @@
 <body>
 
 
+
+
 <header>
-    <h1>Yassin Academy</h1>
+    <div class="header-left">
 
+        <button
+            class="menu-toggle"
+            type="button"
+            aria-label="Toggle navigation"
+            aria-expanded="false"
+        >
+            ☰
+        </button>
 
-   
-<nav>
-    <button
-        class="menu-toggle"
-        type="button"
-        aria-label="Toggle navigation"
-        aria-expanded="false"
-    >
-        ☰
-    </button>
+        <h1>Yassin Academy</h1>
 
-    <div class="nav-links">
-        <a href="#home">Home</a>
-        <a href="#courses">Courses</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#courses">Courses</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="subscription.html">Offers</a>
+            <a href="faq.html">FAQ</a>
+        </div>
+
     </div>
-</nav>
 
+    <nav>
+        <div class="nav-actions">
+                        <a href="subscription.html" class="subscribe-btn">Offers</a>
+
+            <a href="sign in.html" class="btn login-btn">Sign in</a>
+            <a href="sign up.html" class="btn signup-btn">Sign up</a>
+        </div>
+    </nav>
 </header>
+
+
 
 
 <main>
 
-    <!-- HOME SECTION -->
+    
     <section class="hero" id="home">
         <div class="hero-content">
             <h2>
@@ -57,8 +71,11 @@
             <a href="#courses" class="btn">Explore Courses</a>
         </div>
     </section>
-
-    <!-- COURSES SECTION -->
+<section class="hero">
+    <img src="academyImage.png"
+         alt="Yassin Academy — Maths, Physics and Computer Science">
+</section>
+    
     <section id="courses">
         <h2>Our Courses</h2>
 
@@ -71,19 +88,19 @@
             <div class="course-card">
                 <h3>Mathematics</h3>
                 <p>Strengthen your skills and solve problems with confidence.</p>
-                <a href="#">Learn more →</a>
+                <a href="subscription.html">Learn more →</a>
             </div>
 
             <div class="course-card">
                 <h3>Physics</h3>
                 <p>Understand the world through science and discovery.</p>
-                <a href="#">Learn more →</a>
+                <a href="subscription.html">Learn more →</a>
             </div>
 
             <div class="course-card">
                 <h3>Computer Science</h3>
                 <p>Develop logical thinking and programming skills.</p>
-                <a href="#">Learn more →</a>
+                <a href="subscription.html">Learn more →</a>
             </div>
 
         </div>
@@ -94,7 +111,7 @@
 
 </main>
 
-    <!-- ===== FOOTER ===== -->
+    
     <footer>
         <div class="footer-container">
 
@@ -112,7 +129,13 @@
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="index.html#courses">Courses</a></li>
+                                        <li><a href="subscription.html">Offers</a></li>
+
                     <li><a href="contact.html">Contact</a></li>
+                    <li> <a href="sign in.html">Sign in</a></li>
+                    <li><a href="sign up.html">Register</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+
                 </ul>
             </div>
 

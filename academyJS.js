@@ -1,51 +1,40 @@
 
-/* ========================================
-   YASSIN ACADEMY - academyJS.js
-======================================== */
+/* ===== 1. HAMBURGER MENU ===== */
 
-
-/* ===== 1. MOBILE NAVBAR ===== */
+/* ===== 1. HAMBURGER MENU ===== */
 
 const menuButton = document.querySelector(".menu-toggle");
-const navbar = document.querySelector("header nav");
+const navLinks = document.querySelector(".nav-links");
 
-if (menuButton && navbar) {
-
-    menuButton.setAttribute("aria-expanded", "false");
+if (menuButton && navLinks) {
 
     menuButton.addEventListener("click", () => {
+        const isOpen = navLinks.classList.toggle("active");
 
-        const isOpen = navbar.classList.toggle("active");
-
-        menuButton.setAttribute(
-            "aria-expanded",
-            String(isOpen)
-        );
-
-        // Change hamburger icon to X
+        menuButton.setAttribute("aria-expanded", String(isOpen));
         menuButton.textContent = isOpen ? "✕" : "☰";
-
     });
 
-    // Close menu after clicking a navigation link
-    navbar.querySelectorAll(".nav-links a").forEach(link => {
-
+    navLinks.querySelectorAll("a").forEach(link => {
         link.addEventListener("click", () => {
-
-            navbar.classList.remove("active");
-
-            menuButton.setAttribute(
-                "aria-expanded",
-                "false"
-            );
-
+            navLinks.classList.remove("active");
+            menuButton.setAttribute("aria-expanded", "false");
             menuButton.textContent = "☰";
-
         });
-
     });
 
+    document.addEventListener("click", event => {
+        if (
+            !navLinks.contains(event.target) &&
+            !menuButton.contains(event.target)
+        ) {
+            navLinks.classList.remove("active");
+            menuButton.setAttribute("aria-expanded", "false");
+            menuButton.textContent = "☰";
+        }
+    });
 }
+
 
 
 /* ===== 2. ACTIVE NAVBAR LINK ===== */

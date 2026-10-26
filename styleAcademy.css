@@ -41,71 +41,171 @@ header {
     align-items: center;
     justify-content: space-between;
     gap: 20px;
-    padding: 18px 8%;
+    padding: 18px 30px 18px 9px;
     background: var(--white);
     box-shadow: 0 4px 20px rgba(9, 38, 77, 0.08);
     position: sticky;
     top: 0;
-    z-index: 100;
+    z-index: 1000;
+
 }
 
-header h1 {
+/* ===== HAMBURGER + TITLE ===== */
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+}
+
+.header-left h1 {
+    margin: 0;
     color: var(--primary);
-    font-size: 26px;
+    font-size: 30px;
     font-weight: 800;
     letter-spacing: -0.5px;
+    white-space: nowrap;
 }
 
-/* ===== NAVIGATION ===== */
-header nav {
+/* ===== HAMBURGER BUTTON ===== */
+.menu-toggle {
     display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    position: relative;
-    gap: 0;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 45px;
+    height: 42px;
+    padding: 0;
+    border: none;
+    border-radius: 10px;
+    background: var(--primary);
+    color: var(--white);
+    font-size: 25px;
+    line-height: 1;
+    cursor: pointer;
 }
 
-/* Links are hidden until the menu opens */
-.nav-links {
+.menu-toggle:hover {
+    background: var(--dark-blue);
+    transform: none;
+    box-shadow: none;
+}
+
+/* ===== DROPDOWN MENU ===== */
+.header-left .nav-links {
     display: none;
     flex-direction: column;
     align-items: stretch;
     gap: 5px;
-
     position: absolute;
-    top: calc(100% + 10px);
-    right: 0;
-
+    top: calc(100% + 18px);
+    left: 0;
     min-width: 190px;
     padding: 12px;
-
-    background: var(--white);
-    border: 1px solid #e7edf5;
+    background: var(--dark-blue);
+    border: 1px solid #1b416e;
     border-radius: 12px;
-    box-shadow: 0 8px 25px rgba(9, 38, 77, 0.12);
+    box-shadow: 0 8px 25px rgba(9, 38, 77, 0.2);
+    z-index: 1001;
 }
 
-/* Show links when JavaScript adds the active class */
-header nav.active .nav-links {
+.header-left .nav-links.active {
     display: flex;
 }
 
-.nav-links a {
+.header-left .nav-links a {
     display: block;
     padding: 10px 14px;
-    color: var(--dark-blue);
+    color: var(--white);
     font-weight: 600;
     border-radius: 8px;
     transition: color 0.3s ease, background 0.3s ease;
 }
 
-.nav-links a:hover,
-.nav-links a.active {
-    color: var(--primary);
-    background: var(--light-blue);
+.header-left .nav-links a:hover,
+.header-left .nav-links a.active {
+    color: var(--dark-blue);
+    background: darkgray;
+}
+
+/* ===== LOGIN + SIGNUP BUTTONS ===== */
+header nav {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Log in stays blue */
+.nav-actions .login-btn {
+    display: inline-block;
+    padding: 10px 18px;
+    background: var(--primary);
+    color: var(--white);
+    border: none;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 600;
+    white-space: nowrap;
+    transition: 0.3s ease;
+}
+.nav-actions .Offers-btn {
+    display: inline-block;
+    padding: 10px 18px;
+    background: var(--primary);
+    color: var(--white);
+    border: none;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 600;
+    white-space: nowrap;
+    transition: 0.3s ease;
+}
+
+
+/* Sign up is light grey */
+.nav-actions .signup-btn {
+    display: inline-block;
+    padding: 10px 18px;
+    background: #d3d3d3;
+    color: var(--dark-blue);
+    border: none;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 600;
+    white-space: nowrap;
+    transition: 0.3s ease;
+}
+
+.nav-actions .login-btn:hover {
+    background: var(--dark-blue);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(18, 97, 201, 0.2);
+}
+
+.nav-actions .signup-btn:hover {
+    background: #bfbfbf;
+    color: var(--dark-blue);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+.nav-actions .offers-btn:hover {
+    background: #bfbfbf;
+    color: var(--dark-blue);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 /* ===== GENERAL BUTTONS ===== */
+/* Preserved to maintain the original Explore Courses button style */
 button,
 .btn {
     display: inline-block;
@@ -128,35 +228,30 @@ button:hover,
     box-shadow: 0 8px 20px rgba(18, 97, 201, 0.2);
 }
 
-/* ===== HAMBURGER MENU BUTTON ===== */
-/* Visible on desktop and mobile */
+/* Keep hamburger and account buttons independent of general button styles */
 .menu-toggle {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 50px;
-    height: 45px;
     padding: 0;
-    border: none;
-    border-radius: 12px;
-    background: var(--primary);
-    color: var(--white);
-    font-size: 27px;
-    line-height: 1;
-    cursor: pointer;
+    font-weight: 400;
 }
 
 .menu-toggle:hover {
-    background: var(--dark-blue);
     transform: none;
     box-shadow: none;
 }
 
-.menu-toggle:focus-visible,
-.nav-links a:focus-visible,
-.btn:focus-visible {
-    outline: 3px solid var(--gold);
-    outline-offset: 3px;
+.nav-actions .login-btn,
+.nav-actions .signup-btn,
+    .nav-actions .offers-btn {
+
+    padding: 10px 18px;
+    font-weight: 600;
+}
+
+.nav-actions .login-btn:hover,
+.nav-actions .signup-btn:hover,
+    .nav-actions .offers-btn {
+
+    transform: translateY(-2px);
 }
 
 /* ===== HERO SECTION ===== */
@@ -197,6 +292,24 @@ button:hover,
     color: var(--dark-blue);
     margin-bottom: 30px;
     max-width: 500px;
+}
+
+/* ===== EXPLORE COURSES BUTTON ===== */
+.hero .btn {
+    display: inline-block;
+    padding: 13px 25px;
+    background: var(--primary);
+    color: var(--white);
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.hero .btn:hover {
+    background: var(--dark-blue);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(18, 97, 201, 0.2);
 }
 
 /* ===== GENERAL SECTIONS ===== */
@@ -488,7 +601,7 @@ footer {
 }
 
 .footer-section ul li a:hover {
-    color: var(--gold);
+    color: darkgray;
 }
 
 .footer-bottom {
@@ -519,34 +632,33 @@ footer {
 /* ===== MOBILE RESPONSIVE ===== */
 @media (max-width: 768px) {
     header {
-        flex-wrap: wrap;
-        gap: 15px;
-        padding: 15px 6%;
+        padding: 15px 12px;
+        gap: 12px;
     }
 
-    header h1 {
-        font-size: 23px;
+    .header-left {
+        gap: 10px;
     }
 
-    header nav {
-        margin-left: auto;
-        align-items: flex-end;
-        flex-direction: column;
-        gap: 0;
+    .header-left h1 {
+        font-size: clamp(18px, 3.5vw, 26px);
     }
 
-    /* Hamburger remains visible */
     .menu-toggle {
-        display: flex;
+        width: 40px;
+        height: 40px;
     }
 
-    /* Keep links hidden until menu opens */
-    .nav-links {
-        display: none;
+    .nav-actions {
+        gap: 6px;
     }
 
-    header nav.active .nav-links {
-        display: flex;
+    .nav-actions .login-btn,
+    .nav-actions .signup-btn,
+    .nav-actions .offers-btn {
+    
+        padding: 9px 10px;
+        font-size: 13px;
     }
 
     .hero {
@@ -578,6 +690,37 @@ footer {
 
 /* ===== SMALL MOBILE SCREENS ===== */
 @media (max-width: 480px) {
+    header {
+        gap: 8px;
+        padding: 12px 8px;
+    }
+
+    .header-left {
+        gap: 8px;
+    }
+
+    .header-left h1 {
+        font-size: 18px;
+    }
+
+    .menu-toggle {
+        width: 36px;
+        height: 38px;
+        font-size: 22px;
+    }
+
+    .nav-actions {
+        gap: 5px;
+    }
+
+    .nav-actions .login-btn,
+    .nav-actions .signup-btn,
+    .nav-actions .offers-btn {
+
+        padding: 8px 7px;
+        font-size: 12px;
+    }
+
     .courses-container,
     .cards-container {
         grid-template-columns: 1fr;
@@ -613,4 +756,27 @@ footer {
         animation-duration: 0.01ms !important;
         animation-iteration-count: 1 !important;
     }
+}
+.hero img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+}
+/* ===== SUBSCRIPTION BUTTON ===== */
+/* ===== SUBSCRIPTION BUTTON ===== */
+.subscribe-btn {
+    background-color: #f2bd48;
+    color: #09264d;
+    padding: 10px 22px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.subscribe-btn:hover {
+    background-color: #dca52d;
+    transform: translateY(-2px);
 }

@@ -1,0 +1,238 @@
+
+
+header {
+    background: var(--dark-blue, #09264d);
+    color:  #1261c9;
+    padding: 22px 8%;
+    text-align: center;
+    box-shadow: 0 3px 12px rgba(9, 38, 77, 0.12);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: #1261c9;
+
+    position: relative;
+    left: 30px;
+}
+
+
+/* ===== RESPONSIVE HEADER ===== */
+
+@media (max-width: 600px) {
+    header {
+        padding: 18px 5%;
+    }
+
+    header h1 {
+        font-size: 23px;
+    }
+}
+
+main {
+    min-height: 75vh;
+    padding: 60px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--light-blue, #edf5ff);
+}
+
+/* ===== SIGN UP FORM CARD ===== */
+
+main form {
+    width: 100%;
+    max-width: 560px;
+    padding: 40px;
+    background: var(--white, #ffffff);
+    border-radius: 16px;
+    border: 1px solid #dce8f7;
+    box-shadow: 0 10px 35px rgba(9, 38, 77, 0.10);
+}
+
+/* ===== FORM CONTENT ===== */
+
+.text-container {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.text-container > div {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* ===== LABELS ===== */
+
+.text-container label {
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--dark-blue, #09264d);
+}
+
+/* ===== INPUT FIELDS ===== */
+
+.text-container input {
+    width: 100%;
+    padding: 13px 15px;
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 14px;
+    color: var(--text, #26364a);
+    background: #ffffff;
+    border: 1px solid #ccd9e9;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.25s ease,
+                box-shadow 0.25s ease,
+                background 0.25s ease;
+}
+
+/* Input placeholder */
+
+.text-container input::placeholder {
+    color: #8a98aa;
+    font-size: 13px;
+}
+
+/* Input focus */
+
+.text-container input:focus {
+    border-color: var(--primary, #1261c9);
+    box-shadow: 0 0 0 3px rgba(18, 97, 201, 0.12);
+    background: #fcfdff;
+}
+
+/* ===== SIGN UP BUTTON ===== */
+
+.text-container button {
+    width: 100%;
+    margin-top: 8px;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 8px;
+    background: var(--primary, #1261c9);
+    color: var(--white, #ffffff);
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.25s ease,
+                transform 0.25s ease,
+                box-shadow 0.25s ease;
+}
+
+.text-container button:hover {
+    background: var(--dark-blue, #09264d);
+    box-shadow: 0 5px 15px rgba(9, 38, 77, 0.18);
+    transform: translateY(-2px);
+}
+
+.text-container button:active {
+    transform: translateY(0);
+}
+
+/* Keyboard accessibility */
+
+.text-container button:focus-visible {
+    outline: 3px solid var(--gold, #f2bd48);
+    outline-offset: 3px;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+
+@media (max-width: 600px) {
+    main {
+        padding: 35px 16px;
+    }
+
+    main form {
+        padding: 25px 20px;
+        border-radius: 12px;
+    }
+
+    .text-container {
+        gap: 18px;
+    }
+
+    .text-container input {
+        padding: 12px;
+    }
+
+    .text-container button {
+        padding: 13px;
+    }
+}
+
+/* ===== REDUCED MOTION ===== */
+
+@media (prefers-reduced-motion: reduce) {
+    .text-container input,
+    .text-container button {
+        transition: none;
+    }
+
+    .text-container button:hover {
+        transform: none;
+    }
+}
+.signup-title {
+    margin-bottom: 8px;
+    text-align: center;
+    color: var(--dark-blue, #09264d);
+    font-size: 28px;
+}
+
+.signup-description {
+    margin-bottom: 28px;
+    text-align: center;
+    color: var(--text, #26364a);
+    font-size: 14px;
+}
+
+/* ===== SIGN IN LINK ===== */
+
+.signin-link {
+    margin-top: 22px;
+    text-align: center;
+    font-size: 14px;
+    color: var(--dark-blue, #09264d);
+}
+
+.signin-link a {
+    color: var(--primary, #1261c9);
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.25s ease;
+}
+
+.signin-link a:hover {
+    color: var(--dark-blue, #09264d);
+    text-decoration: underline;
+}
+
+
+/* ===== CLICKABLE ACADEMY TITLE ===== */
+
+header h1 a,
+header h1 a:visited {
+    color: #1261c9 !important;
+    text-decoration: none !important;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    letter-spacing: inherit;
+    position: relative;
+    left: 10px;
+    transition: color 0.25s ease;
+}
+
+header h1 a:hover {
+    color: #09264d !important;
+    text-decoration: none !important;
+}
