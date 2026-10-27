@@ -1029,3 +1029,253 @@ img {
         height: 40px;
     }
 }
+
+/* ===== IMPROVED MOBILE RESPONSIVENESS ===== */
+
+/* Prevent horizontal scrolling */
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: clip;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Tablet and mobile */
+@media (max-width: 768px) {
+
+    /* Header layout */
+    header {
+        flex-wrap: wrap;
+        gap: 12px;
+        padding: 12px 16px;
+    }
+
+    .header-left {
+        gap: 10px;
+        min-width: 0;
+        flex: 1;
+    }
+
+    .header-left h1 {
+        font-size: clamp(17px, 4vw, 24px);
+        white-space: normal;
+        overflow-wrap: anywhere;
+    }
+
+    .menu-toggle {
+        width: 40px;
+        height: 40px;
+        flex-shrink: 0;
+    }
+
+    /* Account buttons */
+    header nav {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .nav-actions {
+        display: flex;
+        width: 100%;
+        gap: 8px;
+    }
+
+    .nav-actions a {
+        flex: 1;
+        min-width: 0;
+        text-align: center;
+        padding: 10px 6px !important;
+        font-size: 13px !important;
+    }
+
+    /* Dropdown menu */
+    .header-left .nav-links {
+        top: calc(100% + 12px);
+        left: 0;
+        width: min(260px, calc(100vw - 32px));
+        min-width: 0;
+        max-height: 70vh;
+        overflow-y: auto;
+    }
+
+    /* Hero section: text and image stack vertically */
+    .hero {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 28px;
+        padding: 45px 20px;
+    }
+
+    .hero-content {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .hero h2 {
+        font-size: clamp(30px, 7vw, 42px);
+        letter-spacing: -0.8px;
+        overflow-wrap: break-word;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .hero img {
+        width: 100%;
+        max-height: 320px;
+        object-fit: contain;
+    }
+
+    /* Page sections */
+    section {
+        padding: 45px 20px;
+    }
+
+    section h2 {
+        font-size: clamp(25px, 6vw, 32px);
+    }
+
+    /* Cards */
+    .courses-container,
+    .cards-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+    }
+
+    .course-card,
+    .card {
+        padding: 20px;
+    }
+
+    /* Contact section */
+    .contact-section {
+        padding: 45px 20px;
+    }
+
+    .contact-wrapper {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .contact-details {
+        padding: 28px 22px;
+    }
+
+    /* Forms */
+    form {
+        width: 100%;
+        max-width: 450px;
+        padding: 25px 20px;
+    }
+
+    /* Footer */
+    footer {
+        padding: 30px 20px 20px;
+        margin-top: 35px;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .footer-section {
+        width: 100%;
+        min-width: 0;
+    }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+
+    header {
+        padding: 10px 12px;
+        gap: 10px;
+    }
+
+    .header-left {
+        gap: 8px;
+    }
+
+    .header-left h1 {
+        font-size: 17px;
+    }
+
+    .menu-toggle {
+        width: 36px;
+        height: 36px;
+        font-size: 22px;
+    }
+
+    .nav-actions {
+        gap: 6px;
+    }
+
+    .nav-actions a {
+        padding: 9px 4px !important;
+        font-size: 12px !important;
+        border-radius: 8px;
+    }
+
+    .hero {
+        padding: 35px 18px;
+    }
+
+    .hero h2 {
+        font-size: 32px;
+        line-height: 1.2;
+    }
+
+    .hero p {
+        font-size: 15px;
+    }
+
+    .hero .btn {
+        max-width: 100%;
+        padding: 12px 18px;
+    }
+
+    section {
+        padding: 38px 18px;
+    }
+
+    .courses-container,
+    .cards-container {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 18px;
+    }
+
+    .course-card,
+    .card {
+        padding: 22px;
+    }
+
+    .course-card img,
+    .card img {
+        height: 190px;
+    }
+
+    form {
+        padding: 22px 16px;
+        border-radius: 15px;
+    }
+
+    .contact-details {
+        padding: 24px 18px;
+    }
+
+    .contact-detail {
+        gap: 10px;
+    }
+
+    .contact-icon {
+        width: 40px;
+        height: 40px;
+    }
+}
+
