@@ -255,3 +255,121 @@ header nav ul li a:hover,
 header nav ul li a.active {
     color: #1261c9;
 }
+/* ===== ABOUT PAGE NAVBAR ===== */
+
+.about-header {
+    background: #ffffff;
+    padding: 16px 5%;
+    box-shadow: 0 4px 20px rgba(9, 38, 77, 0.08);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.about-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.about-nav .logo {
+    color: #1261c9;
+    font-size: 28px;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+.about-nav .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.about-nav .nav-links a {
+    color: #26364a;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.about-nav .nav-links a:hover,
+.about-nav .nav-links a.active {
+    color: #1261c9;
+}
+
+.about-nav .menu-toggle {
+    display: none;
+}
+
+/* ===== MOBILE NAVBAR ===== */
+
+@media (max-width: 768px) {
+    .about-header {
+        padding: 14px 18px;
+    }
+
+    .about-nav {
+        position: relative;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 12px;
+    }
+
+    .about-nav .logo {
+        font-size: clamp(19px, 5vw, 25px);
+    }
+
+    .about-nav .menu-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 42px;
+        height: 42px;
+        padding: 0;
+        background: #1261c9;
+        color: #ffffff;
+        border: none;
+        border-radius: 9px;
+        font-size: 25px;
+        cursor: pointer;
+        flex-shrink: 0;
+    }
+
+    .about-nav .nav-links {
+        display: none;
+        position: absolute;
+        top: calc(100% + 12px);
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 4px;
+        padding: 12px;
+        background: #09264d;
+        border-radius: 12px;
+        box-shadow: 0 8px 25px rgba(9, 38, 77, 0.2);
+    }
+
+    .about-nav .nav-links.active {
+        display: flex;
+    }
+
+    .about-nav .nav-links a {
+        display: block;
+        padding: 12px;
+        color: #ffffff;
+        white-space: normal;
+        border-radius: 7px;
+    }
+
+    .about-nav .nav-links a:hover,
+    .about-nav .nav-links a.active {
+        color: #09264d;
+        background: #f2bd48;
+    }
+}
