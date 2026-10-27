@@ -114,6 +114,7 @@ header h1 a {
      position: relative;
     left: 30px;
     font-size: 32px;
+    text-align: center;
 }
 
 /* ===== RESPONSIVE DESIGN ===== */
